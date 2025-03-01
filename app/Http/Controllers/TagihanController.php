@@ -71,7 +71,7 @@ class TagihanController extends Controller
 
         return view('tagihan.index', [
             'tagihan' => $tagihan,
-            'alamat' => AreaAlamat::all(),
+            'alamat' => AreaAlamat::orderBy('nama', 'asc')->get(),
             'months' => $months,
             'years' => $years,
             'selectedYear' => isset($search['tahun']) ? $search['tahun'] : $currentDate->year,

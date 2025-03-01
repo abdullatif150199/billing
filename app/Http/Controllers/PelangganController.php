@@ -39,7 +39,7 @@ class PelangganController extends Controller
         return view('pelanggan.index', [
             'nama' => $search['nama'] ?? '',
             'alamatId' => $search['alamat'] ?? null,
-            'alamat' => AreaAlamat::all(),
+            'alamat' => AreaAlamat::orderBy('nama', 'asc')->get(),
             'pelanggan' => $query->get(),
         ]);
     }
