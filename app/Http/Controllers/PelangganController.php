@@ -51,7 +51,7 @@ class PelangganController extends Controller
     {
         return view('pelanggan.form', [
             'paket' => PaketLangganan::all(),
-            'areaAlamat' => AreaAlamat::all(),
+            'areaAlamat' => AreaAlamat::orderBy('nama', 'asc')->get(),
         ]);
     }
 
